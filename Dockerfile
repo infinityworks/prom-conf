@@ -5,10 +5,17 @@ MAINTAINER Ed Marshall (ed.marshall@infinityworks.com)
 COPY confd/tmpl/* /etc/confd/templates/
 COPY confd/toml/* /etc/confd/conf.d/
 
-RUN curl -L  https://github.com/kelseyhightower/confd/releases/download/v0.11.0/confd-0.11.0-linux-amd64 > /usr/bin/confd && \
-    chmod +x /usr/bin/confd
+RUN echo "http://dl-2.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories && \
+    apk add --update go git gcc musl-dev && \
+    git clone https://github.com/kelseyhightower/confd.git /src/confd && \
+    cd /src/confd/src/github.com/kelseyhightower/confd/ && \
+    GOPATH=/src/confd/vendor:/src/confd go build -a -installsuffix cgo -ldflags '-extld ld -extldflags -static' -x . && \
+    mv ./confd /bin/ && \
+    chmod +x /bin/confd && \
+    apk del go git gcc musl-dev && \
+    rm -rf /var/cache/apk/* /src
 
 RUN mkdir -p /prometheus/
 
-CMD /usr/bin/confd -onetime -backend rancher -prefix /latest
+CMD /bin/confd -onetime -backend rancher -prefix /latest
 
