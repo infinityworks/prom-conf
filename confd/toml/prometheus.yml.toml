@@ -1,6 +1,6 @@
 [template]
 src = "prometheus.yml.tmpl"
-dest = "/prometheus/prometheus.yml"
+dest = "/prometheus/conf/prometheus.yml"
 keys = [
     "/hosts",
 ]

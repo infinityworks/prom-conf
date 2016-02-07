@@ -15,7 +15,7 @@ RUN echo "http://dl-2.alpinelinux.org/alpine/latest-stable/community" >> /etc/ap
     apk del go git gcc musl-dev && \
     rm -rf /var/cache/apk/* /src
 
-RUN mkdir -p /prometheus/
+RUN mkdir -p /prometheus/conf/
 
 CMD /bin/confd -onetime -backend rancher -prefix /latest
 
