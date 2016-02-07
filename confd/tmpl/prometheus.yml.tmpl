@@ -1,0 +1,16 @@
+global:                                                                         
+  scrape_interval:     15s
+  evaluation_interval: 15s
+  external_labels:                                                              
+      monitor: 'exporter-metrics'                                                
+                                                                                
+rule_files:                                                                     
+                                                                                
+scrape_configs:                                                                 
+  - job_name: 'hosts'                                                           
+    scrape_interval: 5s                                                         
+    scrape_timeout: 10s                                                         
+                                                                                
+    target_groups:                                                              
+     - targets:{{range ls "/hosts"}}                                            
+         - '{{.}}:9104' {{end}}  
