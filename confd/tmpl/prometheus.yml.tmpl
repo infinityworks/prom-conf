@@ -13,4 +13,9 @@ scrape_configs:
                                                                                 
     target_groups:                                                              
      - targets:{{range ls "/hosts"}}                                            
-         - '{{.}}:9104' {{end}}  
+         - '{{.}}:9104' {{end}}
+
+    target_groups:
+     - targets:{{range ls "/hosts"}}
+         - '{{.}}:9104'
+         - '{{.}}:9100' {{end}}         
