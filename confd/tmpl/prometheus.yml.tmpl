@@ -8,14 +8,14 @@ rule_files:
                                                                                 
 scrape_configs:                                                                 
   - job_name: 'hosts'                                                           
-    scrape_interval: 5s                                                         
-    scrape_timeout: 10s                                                         
                                                                                 
-    target_groups:                                                              
-     - targets:{{range ls "/hosts"}}                                            
-         - '{{.}}:9104' {{end}}
-
     target_groups:
      - targets:{{range ls "/hosts"}}
          - '{{.}}:9104'
-         - '{{.}}:9100' {{end}}         
+         - '{{.}}:9100' {{end}}
+
+  - job_name: 'rancher-api'
+
+    target_groups:
+      - targets:
+          - 'rancher-api-integration:9010'
