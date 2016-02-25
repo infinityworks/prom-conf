@@ -24,5 +24,5 @@ RUN apk add --update go git gcc musl-dev \
 
 RUN mkdir -p /etc/prom-conf/
 
-CMD /bin/confd -onetime -backend rancher -prefix /latest
+CMD /usr/bin/confd -onetime -backend rancher -prefix /latest
 
