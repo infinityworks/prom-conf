@@ -4,3 +4,4 @@ dest = "/etc/prom-conf/prometheus.yml"
 keys = [
     "/hosts",
 ]
+reload_cmd = "/restart-prometheus"
