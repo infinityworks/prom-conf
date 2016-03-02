@@ -26,3 +26,4 @@ RUN mkdir -p /etc/prom-conf/
 
 CMD /usr/bin/confd -onetime -backend rancher -prefix /latest
 
+CMD ["/usr/bin/confd", "-backend", "rancher", "-interval", "30", "-prefix", "/latest"]
