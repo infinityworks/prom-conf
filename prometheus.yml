@@ -19,7 +19,7 @@ scrape_configs:
     - ranch-eye
     refresh_interval: 15s
     type: A
-    port: 9100
+    port: 9104
 
 - job_name: 'rancher-api'
   target_groups:
