@@ -25,3 +25,8 @@ scrape_configs:
   target_groups:
     - targets:
         - 'prometheus-rancher-exporter:9010' 
+
+- job_name: 'Prometheus'
+  target_groups:
+    - targets:
+      -  '127.0.0.1:9090'
