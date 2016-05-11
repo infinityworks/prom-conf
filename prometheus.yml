@@ -24,4 +24,4 @@ scrape_configs:
 - job_name: 'rancher-api'
   target_groups:
     - targets:
-        - 'rancher-api-integration:9010' 
+        - 'prometheus-rancher-exporter:9010' 
