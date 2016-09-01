@@ -23,3 +23,5 @@ prom-conf:
 The prom-conf container can be found on the docker hub [here](https://hub.docker.com/r/infinityworks/prom-conf/)
 The catalog entry is in the community catalog, available [here](https://github.com/rancher/community-catalog)
 Additional information can be found on the [guide](https://github.com/infinityworksltd/Guide_Rancher_Monitoring)
+
+[![](https://images.microbadger.com/badges/version/infinityworks/prom-conf.svg)](http://microbadger.com/images/infinityworks/prom-conf "Get your own version badge on microbadger.com")

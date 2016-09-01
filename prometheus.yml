@@ -22,9 +22,12 @@ scrape_configs:
     port: 9104
 
 - job_name: 'rancher-api'
-  static_configs:
-    - targets:
-      - 'prometheus-rancher-exporter:9010' 
+  dns_sd_configs:
+  - names:
+    - 'prometheus-rancher-exporter'
+    refresh_interval: 15s
+    type: A
+    port: 9010
 
 - job_name: 'Prometheus'
   static_configs:
