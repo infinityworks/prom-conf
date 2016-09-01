@@ -25,3 +25,5 @@ The catalog entry is in the community catalog, available [here](https://github.c
 Additional information can be found on the [guide](https://github.com/infinityworksltd/Guide_Rancher_Monitoring)
 
 [![](https://images.microbadger.com/badges/version/infinityworks/prom-conf.svg)](http://microbadger.com/images/infinityworks/prom-conf "Get your own version badge on microbadger.com")
+
+[![](https://images.microbadger.com/badges/image/infinityworks/prom-conf.svg)](http://microbadger.com/images/infinityworks/prom-conf "Get your own image badge on microbadger.com")
