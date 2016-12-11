@@ -16,7 +16,7 @@ scrape_configs:
 - job_name: 'ContainerMetrics'
   dns_sd_configs:
   - names:
-    - ranch-eye
+    - cadvisor
     refresh_interval: 15s
     type: A
     port: 9104
