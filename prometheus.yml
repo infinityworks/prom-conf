@@ -19,7 +19,7 @@ scrape_configs:
     - cadvisor
     refresh_interval: 15s
     type: A
-    port: 9104
+    port: 8080
 
 - job_name: 'rancher-api'
   dns_sd_configs:
