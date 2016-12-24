@@ -27,7 +27,7 @@ scrape_configs:
     - 'prometheus-rancher-exporter'
     refresh_interval: 15s
     type: A
-    port: 9010
+    port: 9173
 
 - job_name: 'Prometheus'
   static_configs:
